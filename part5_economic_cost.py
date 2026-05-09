@@ -69,7 +69,7 @@ def build_features(df):
     df = df.dropna().reset_index(drop=True)
     return df
 
-raw_df      = pd.read_excel("air_quality_health_dataset.csv.xlsx")
+raw_df      = pd.read_excel("data-set/air_quality_health_dataset.csv.xlsx")
 raw_targets = ['hospital_visits', 'respiratory_admissions', 'emergency_visits']
 
 df = build_features(raw_df)
