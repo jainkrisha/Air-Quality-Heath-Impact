@@ -25,8 +25,8 @@ os.makedirs("outputs_part3", exist_ok=True)
 # 1. LOAD DATA
 # =========================================================
 
-ds1 = pd.read_excel("air_quality_health_dataset.csv.xlsx")
-ds2 = pd.read_csv("indian_aqi_health_impact_2019_2024.csv")
+ds1 = pd.read_excel("data-set/air_quality_health_dataset.csv.xlsx")
+ds2 = pd.read_csv("data-set/indian_aqi_health_impact_2019_2024.csv")
 
 model        = joblib.load("outputs_part1/final_xgb_pipeline.pkl")
 feature_cols = joblib.load("outputs_part1/feature_columns.pkl")

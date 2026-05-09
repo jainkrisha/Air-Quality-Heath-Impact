@@ -32,7 +32,7 @@ os.makedirs("outputs_part4", exist_ok=True)
 model        = joblib.load("outputs_part1/final_xgb_pipeline.pkl")
 feature_cols = joblib.load("outputs_part1/feature_columns.pkl")
 
-ds2 = pd.read_csv("indian_aqi_health_impact_2019_2024.csv")
+ds2 = pd.read_csv("data-set/indian_aqi_health_impact_2019_2024.csv")
 
 # Repair date column
 for col in ds2.columns:
@@ -46,7 +46,7 @@ ds2["Month"] = ds2["Date"].dt.month
 ds2["Year"]  = ds2["Date"].dt.year
 
 # We need X from part1 for the health template row; rebuild a minimal version
-ds1 = pd.read_excel("air_quality_health_dataset.csv.xlsx")
+ds1 = pd.read_excel("data-set/air_quality_health_dataset.csv.xlsx")
 ds1['date'] = pd.to_datetime(ds1['date'])
 
 # =========================================================

@@ -22,11 +22,13 @@ os.makedirs("outputs_part2", exist_ok=True)
 # LOAD MODEL + DATA
 # =========================================================
 
-if 'final_model_pipeline' not in globals():
+try:
+    final_model_pipeline  # reuse if already in memory (e.g. running interactively after part1)
+except NameError:
     print("Reloading model from Part 1 outputs...")
     final_model_pipeline = joblib.load("outputs_part1/final_xgb_pipeline.pkl")
 
-raw_df = pd.read_excel("air_quality_health_dataset.csv.xlsx")
+raw_df = pd.read_excel(r"D:\Air-Quality-Heath-Impact\data-set\air_quality_health_dataset.csv.xlsx")
 raw_df['date'] = pd.to_datetime(raw_df['date'])
 raw_df = raw_df.dropna().reset_index(drop=True)
 
