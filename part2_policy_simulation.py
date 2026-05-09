@@ -22,9 +22,7 @@ os.makedirs("outputs_part2", exist_ok=True)
 # LOAD MODEL + DATA
 # =========================================================
 
-try:
-    final_model_pipeline  # reuse if already in memory (e.g. running interactively after part1)
-except NameError:
+if 'final_model_pipeline' not in globals():
     print("Reloading model from Part 1 outputs...")
     final_model_pipeline = joblib.load("outputs_part1/final_xgb_pipeline.pkl")
 
